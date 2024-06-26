@@ -1,0 +1,63 @@
+
+<div class="overlay"></div>
+<div class="container">
+
+    <div class="add-product">
+      <form [formGroup]="productForm" (ngSubmit)="saveProduct()">
+        <div class="card">
+          <div>
+            <label>Product name:</label>
+            <input pInputText formControlName="productName" placeholder="Nombre" />
+          </div>
+          <div>
+            <label>Categoria:</label>
+            <div class=" flex justify-content-between flex-wrap">
+             
+            
+                  <div *ngFor="let category of categories" class="field-checkbox">
+                    <p-radioButton 
+                      [inputId]="category.key" 
+                      [value]="category.key" 
+                      formControlName="selectedCategory" 
+                      [label]="category.name">
+                    </p-radioButton>
+                  </div>
+                </div>
+          
+          </div>
+          <div>
+            <label>Product description:</label>
+            <textarea rows="5" cols="20" pInputTextarea formControlName="description" placeholder="Sample description..."></textarea>
+          </div>
+          <div>
+            <label>Product image:</label>
+            <input pInputText type="file" (change)="onFileSelected($event)"  required /> 
+             <div *ngIf="imageUrl">
+              <img [src]="imageUrl" alt="Product productName" style="max-width: 200px; margin-top: 10px;">
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-1 p-fluid">
+            <label for="minmax">Product price:</label>
+            <p-inputNumber placeholder="33.50" formControlName="price" inputId="minmax" mode="decimal" [min]="0" [max]=""></p-inputNumber>
+          </div>
+          <div class="flex">
+            <div>
+              <button pButton pRipple type="submit" label="Add" class="p-button-success"></button>
+            </div>
+            <div>
+              
+              <button pButton pRipple type="button" label="Cancel" class="p-button-danger" (click)="router.navigate(['/productos'])"></button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+  </div>
+  
+ 
+
+ 
+
+
+

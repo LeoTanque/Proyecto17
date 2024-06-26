@@ -1,0 +1,28 @@
+.p-toolbar-group-align-right {
+    margin-left: auto;
+    
+}
+
+.p-toolbar-buttons-spacing .p-button {
+    margin-right: 8px; /* Ajusta el valor según tu preferencia */
+}
+
+:host ::ng-deep  .p-button {
+    margin: 5px !important;
+    display: inline-flex;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+    align-items: center;
+    vertical-align: bottom;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+:host ::ng-deep .p-toolbar {
+     background: none; 
+     border: none;
+     padding: 1.25rem;
+    
+}

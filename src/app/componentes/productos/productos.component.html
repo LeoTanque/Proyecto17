@@ -1,0 +1,68 @@
+<div>
+  <div class="overlay"></div>
+
+    <app-top-bar></app-top-bar>
+
+
+  
+  <div class="container"> 
+    <div class="list-products">
+     
+        @for (producto of productos$ | async; track $index) {
+          <div class="card product">
+            <img [src]="producto.image" alt="{{ producto.productName }}" />
+            <p>{{ producto.productName }}</p>
+            <p>{{ producto.price | currency }}</p>
+            <button class="details-button">Details</button>
+            <button pButton pRipple label="Buy" class="p-button-success buy-button"(click)="addToCart(producto)" ></button>
+            <div class="flex">
+              <button pButton pRipple label="Edit" class="p-button-warning edit-button" (click)="editProducto(producto)"></button>
+              <button pButton pRipple label="Delete" class="p-button-danger delete-button" (click)="deleteProducto(producto.id)"></button>
+            </div>
+          
+          </div>
+     
+        }
+  
+   
+    </div>
+  
+    <div class="shopping-cart" [ngClass]="{ 'visible': carritoVisible }">
+      <div class="shopping-cart-products">
+        <div *ngFor="let item of carritoProductos, let i = index" class="shopping-cart-product">
+          
+            <div class="product-info">
+              <div>
+                <h3>{{ item.producto.productName }}</h3>
+                <p>{{ item.producto.price | currency }} &times; {{ item.cantidad }}</p>
+              </div>
+              <img [src]="item.producto.image" />
+            </div>
+            <div class="product-count">
+              <button (click)="decrementQuantity(item)">-</button>
+              <span>{{ item.cantidad }}</span>
+              <button (click)="incrementQuantity(item)">+</button>
+              <button (click)="removeFromCart(i)">Remove</button>
+           
+            </div>
+          
+        
+        </div>
+      </div>
+      <div class="shopping-cart-summary">
+        <div>Total: <b>{{ calcularTotal() | currency }}</b></div>
+        <div><button (click)="purchase()">Purchase</button></div>
+      </div>
+    </div>
+  
+    <div class="carrito-icono" (click)="toggleCarrito()">
+      <i class="pi pi-shopping-cart"></i>
+      <span class="contador">{{ carritoProductos.length }}</span>
+    </div>
+    
+  </div>
+</div>
+
+
+
+

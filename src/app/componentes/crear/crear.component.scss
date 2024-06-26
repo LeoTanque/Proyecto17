@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
+
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
+}
+
+.container {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  width: 100%;
+
+  margin: 0;
+  padding: 0;
+ 
+  min-height: 100vh;
+  font-family: 'Jost', sans-serif;
+  
+}
+
+.add-product {
+
+  width: 50%;
+ // height: 100vh;
+  //overflow: scroll;
+  justify-content: center;
+  padding: 5px;
+
+}
+
+.card{
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(181, 155, 155);
+    border-radius: 10px;
+    padding: 20px;
+   background-color: aliceblue;
+}
+
+
+:host ::ng-deep .p-card .p-card-content {
+    padding: 0;
+}
+
+.add-product form div {
+  margin-bottom: 15px;
+}
+
+.add-product label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+}
+
+.add-product input,
+.add-product textarea {
+  width: 100%;
+ // padding: 8px;
+ // font-size: 14px;
+ // letter-spacing: .5px;
+}
+
+.add-product button {
+  width: 150px;
+  border: none;
+  border-radius: 10px;
+  margin-top: 15px;
+  //background: #0A9CE9;
+ // color: #fff;
+  //padding: 10px 0;
+  cursor: pointer;
+  font-weight: 100;
+}
+
+   
+
+ 
+.flex{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+
+@media (max-width: 1500px) {
+  .add-product{
+    display: flex;
+     width: 90%;
+     min-height: 90%;
+  }
+ 
+}
+

@@ -1,0 +1,60 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+
+@import 'primeflex/primeflex.scss';
+@import 'ngx-toastr/toastr';
+.mybutton {
+    @include styleclass('bg-blue-500 hover:bg-blue-600 border-round transition-colors transition-duration-150 p-3 border-none');
+}
+@import "primeicons/primeicons.css";
+
+body {
+    background-image: url('./assets/fondo.jpg');
+    background-size: cover; /* Asegura que la imagen cubra todo el fondo */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* No repite la imagen */
+    background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll */
+    margin: 0;
+    padding: 1px;
+    height: 100vh;
+   
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Ajusta la opacidad aquí */
+    z-index: 1; /* Coloca la superposición sobre el fondo */
+}
+
+
+.container {
+    position: relative;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    z-index: 2; 
+ 
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .body {
+        padding: 15px;
+        margin: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .component-container {
+        padding: 10px;
+        margin: 5px;
+    }
+}
